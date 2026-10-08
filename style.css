@@ -274,7 +274,7 @@ body::before {
 
     /* POSISI SATURNUS */
     right: 4%;
-    top: 9%;
+    top: 13%;
 
     background:
         radial-gradient(
@@ -668,7 +668,7 @@ footer small {
         height: 210px;
 
         right: 2%;
-        top: 10%;
+        top: 14%;
     }
 
     .planet::before {
@@ -752,7 +752,7 @@ footer small {
         height: 150px;
 
         right: -35px;
-        top: 8%;
+        top: 12%;
 
         opacity: 0.75;
     }
@@ -847,7 +847,7 @@ footer small {
         height: 120px;
 
         right: -30px;
-        top: 7%;
+        top: 11%;
     }
 
     .planet::before {
