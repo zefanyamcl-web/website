@@ -1,5 +1,5 @@
 // ================================
-// ZAMMM SPACE PORTFOLIO
+// Zefanya Marcell SPACE PORTFOLIO
 // ================================
 
 console.log("Welcome to ZAMMM Space Portfolio 🚀");
