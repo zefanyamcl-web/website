@@ -1,0 +1,732 @@
+/* ================================
+   ZAMMM SPACE PORTFOLIO
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #03050d;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+/* ================================
+   SPACE BACKGROUND
+   ================================ */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(73, 98, 255, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(160, 60, 255, 0.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0, 150, 255, 0.06),
+            transparent 45%
+        ),
+        #03050d;
+}
+
+
+/* ================================
+   STARS
+   ================================ */
+
+.stars,
+.stars-2,
+.stars-3 {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -5;
+}
+
+.stars {
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, white, transparent),
+        radial-gradient(1px 1px at 20% 80%, white, transparent),
+        radial-gradient(2px 2px at 30% 40%, white, transparent),
+        radial-gradient(1px 1px at 40% 10%, white, transparent),
+        radial-gradient(2px 2px at 50% 70%, white, transparent),
+        radial-gradient(1px 1px at 60% 30%, white, transparent),
+        radial-gradient(2px 2px at 70% 90%, white, transparent),
+        radial-gradient(1px 1px at 80% 50%, white, transparent),
+        radial-gradient(2px 2px at 90% 15%, white, transparent);
+
+    animation: starsMove 20s linear infinite;
+}
+
+.stars-2 {
+    opacity: 0.5;
+
+    background-image:
+        radial-gradient(1px 1px at 15% 60%, white, transparent),
+        radial-gradient(2px 2px at 35% 25%, white, transparent),
+        radial-gradient(1px 1px at 55% 85%, white, transparent),
+        radial-gradient(2px 2px at 75% 35%, white, transparent),
+        radial-gradient(1px 1px at 95% 75%, white, transparent);
+
+    animation: starsMove 35s linear infinite reverse;
+}
+
+.stars-3 {
+    opacity: 0.3;
+
+    background-image:
+        radial-gradient(1px 1px at 5% 90%, white, transparent),
+        radial-gradient(1px 1px at 25% 10%, white, transparent),
+        radial-gradient(1px 1px at 45% 55%, white, transparent),
+        radial-gradient(1px 1px at 65% 5%, white, transparent),
+        radial-gradient(1px 1px at 85% 65%, white, transparent);
+
+    animation: starsMove 50s linear infinite;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-80px);
+    }
+}
+
+
+/* ================================
+   NAVBAR
+   ================================ */
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 1100px;
+
+    padding: 16px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(10, 14, 30, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-radius: 50px;
+
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span,
+.footer-logo span {
+    color: #6d7cff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+
+/* ================================
+   HERO
+   ================================ */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    padding: 120px 8%;
+
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+
+    position: relative;
+    z-index: 5;
+}
+
+.small-text {
+    color: #7180ff;
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 10vw, 120px);
+    line-height: 1;
+
+    margin-bottom: 20px;
+
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #7180ff,
+        #b66cff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.subtitle {
+    color: #b8bdd0;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 600px;
+    margin: auto;
+
+    color: #777f96;
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* ================================
+   BUTTONS
+   ================================ */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.primary {
+    background: linear-gradient(
+        135deg,
+        #6675ff,
+        #9a63ff
+    );
+
+    color: white;
+
+    box-shadow:
+        0 0 30px rgba(100, 110, 255, 0.25);
+}
+
+.primary:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 45px rgba(100, 110, 255, 0.45);
+}
+
+.secondary {
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+
+    background: rgba(255,255,255,0.04);
+}
+
+.secondary:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+}
+
+
+/* ================================
+   PLANET
+   ================================ */
+
+.planet {
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    right: -100px;
+    top: 18%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #7785ff,
+            #333b91 35%,
+            #11152f 70%,
+            #05060e
+        );
+
+    box-shadow:
+        -20px 20px 100px rgba(82, 95, 255, 0.35);
+
+    opacity: 0.8;
+}
+
+.planet::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 100px;
+
+    left: -75px;
+    top: 125px;
+
+    border: 2px solid rgba(160, 170, 255, 0.25);
+
+    border-radius: 50%;
+
+    transform: rotate(-18deg);
+}
+
+
+/* ================================
+   ORBIT
+   ================================ */
+
+.orbit {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(110, 120, 255, 0.12);
+
+    border-radius: 50%;
+
+    right: -180px;
+    top: 10%;
+
+    animation: orbitRotate 20s linear infinite;
+}
+
+.orbit-dot {
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    background: #8995ff;
+
+    border-radius: 50%;
+
+    top: 40px;
+    left: 80px;
+
+    box-shadow:
+        0 0 20px #7180ff;
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ================================
+   SECTIONS
+   ================================ */
+
+.section {
+    padding: 130px 10%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.section-label {
+    color: #6675ff;
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.section h2,
+.contact-section h2 {
+    font-size: clamp(40px, 6vw, 70px);
+
+    margin-bottom: 20px;
+
+    letter-spacing: -2px;
+}
+
+.section-text {
+    color: #7e8499;
+
+    max-width: 700px;
+
+    line-height: 1.8;
+
+    margin-bottom: 50px;
+}
+
+
+/* ================================
+   INFO CARDS
+   ================================ */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.info-card {
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.06),
+            rgba(255,255,255,0.02)
+        );
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.4s;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(120,130,255,0.4);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.3);
+}
+
+.icon {
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #777f96;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   PROJECTS
+   ================================ */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+
+    padding: 35px;
+
+    min-height: 280px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.015)
+        );
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: -70px;
+    top: -70px;
+
+    border-radius: 50%;
+
+    background: #6675ff;
+
+    filter: blur(70px);
+
+    opacity: 0.15;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(120,130,255,0.4);
+}
+
+.project-number {
+    color: #5965cc;
+
+    font-size: 14px;
+
+    margin-bottom: 50px;
+}
+
+.project-card h3 {
+    font-size: 24px;
+
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #777f96;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.project-card span {
+    color: #8993ff;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================================
+   CONTACT
+   ================================ */
+
+.contact-section {
+    text-align: center;
+
+    padding: 150px 20px;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.contact-section p:not(.section-label) {
+    color: #777f96;
+
+    margin-bottom: 35px;
+}
+
+
+/* ================================
+   FOOTER
+   ================================ */
+
+footer {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.07);
+
+    background: rgba(0,0,0,0.2);
+}
+
+.footer-logo {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #666d80;
+
+    margin-bottom: 20px;
+}
+
+footer small {
+    color: #454a5a;
+}
+
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        width: 94%;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .planet {
+        width: 220px;
+        height: 220px;
+
+        right: -100px;
+        top: 15%;
+    }
+
+    .orbit {
+        width: 300px;
+        height: 300px;
+
+        right: -150px;
+    }
+
+    .info-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 100px 7%;
+    }
+
+    .hero {
+        padding: 120px 7%;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 14px 18px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+}
