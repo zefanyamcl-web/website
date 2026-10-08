@@ -1,6 +1,6 @@
-/* ================================
-   ZAMMM SPACE PORTFOLIO
-   ================================ */
+/* =========================
+   DARK SPACE PORTFOLIO
+   ========================= */
 
 * {
     margin: 0;
@@ -9,724 +9,302 @@
     scroll-behavior: smooth;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #03050d;
-    color: #ffffff;
+    background:
+        radial-gradient(circle at 70% 20%, rgba(255,255,255,0.05), transparent 20%),
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.03), transparent 25%),
+        #020304;
+    color: #f5f5f5;
     overflow-x: hidden;
 }
 
-
-/* ================================
-   SPACE BACKGROUND
-   ================================ */
+/* STAR FIELD */
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: -10;
-
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(73, 98, 255, 0.18),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(160, 60, 255, 0.15),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(0, 150, 255, 0.06),
-            transparent 45%
-        ),
-        #03050d;
-}
-
-
-/* ================================
-   STARS
-   ================================ */
-
-.stars,
-.stars-2,
-.stars-3 {
-    position: fixed;
-    inset: 0;
     pointer-events: none;
-    z-index: -5;
-}
-
-.stars {
     background-image:
-        radial-gradient(2px 2px at 10% 20%, white, transparent),
-        radial-gradient(1px 1px at 20% 80%, white, transparent),
-        radial-gradient(2px 2px at 30% 40%, white, transparent),
-        radial-gradient(1px 1px at 40% 10%, white, transparent),
-        radial-gradient(2px 2px at 50% 70%, white, transparent),
-        radial-gradient(1px 1px at 60% 30%, white, transparent),
-        radial-gradient(2px 2px at 70% 90%, white, transparent),
-        radial-gradient(1px 1px at 80% 50%, white, transparent),
-        radial-gradient(2px 2px at 90% 15%, white, transparent);
-
-    animation: starsMove 20s linear infinite;
+        radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size: 110px 110px, 170px 170px;
+    background-position: 20px 30px, 80px 100px;
+    opacity: 0.35;
+    z-index: -1;
 }
 
-.stars-2 {
-    opacity: 0.5;
+/* NAVBAR */
 
-    background-image:
-        radial-gradient(1px 1px at 15% 60%, white, transparent),
-        radial-gradient(2px 2px at 35% 25%, white, transparent),
-        radial-gradient(1px 1px at 55% 85%, white, transparent),
-        radial-gradient(2px 2px at 75% 35%, white, transparent),
-        radial-gradient(1px 1px at 95% 75%, white, transparent);
-
-    animation: starsMove 35s linear infinite reverse;
-}
-
-.stars-3 {
-    opacity: 0.3;
-
-    background-image:
-        radial-gradient(1px 1px at 5% 90%, white, transparent),
-        radial-gradient(1px 1px at 25% 10%, white, transparent),
-        radial-gradient(1px 1px at 45% 55%, white, transparent),
-        radial-gradient(1px 1px at 65% 5%, white, transparent),
-        radial-gradient(1px 1px at 85% 65%, white, transparent);
-
-    animation: starsMove 50s linear infinite;
-}
-
-@keyframes starsMove {
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(-80px);
-    }
-}
-
-
-/* ================================
-   NAVBAR
-   ================================ */
-
-.navbar {
+nav {
     position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 90%;
-    max-width: 1100px;
-
-    padding: 16px 25px;
-
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    background: rgba(10, 14, 30, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    border-radius: 50px;
-
-    z-index: 100;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 1000;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: 800;
+.logo,
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
     letter-spacing: 2px;
+    color: white;
 }
 
 .logo span,
 .footer-logo span {
-    color: #6d7cff;
+    color: #aaa;
 }
 
-.nav-links {
+nav ul {
     display: flex;
     gap: 30px;
+    list-style: none;
 }
 
-.nav-links a {
+nav ul li a {
     color: #aaa;
     text-decoration: none;
-    font-size: 14px;
-
     transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: #ffffff;
+nav ul li a:hover {
+    color: white;
 }
 
-
-/* ================================
-   HERO
-   ================================ */
+/* HERO */
 
 .hero {
     min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     position: relative;
-    padding: 120px 8%;
-
     overflow: hidden;
+    padding: 100px 8%;
 }
 
 .hero-content {
-    max-width: 800px;
-    text-align: center;
-
     position: relative;
     z-index: 5;
-}
-
-.small-text {
-    color: #7180ff;
-    font-size: 13px;
-    letter-spacing: 5px;
-    margin-bottom: 20px;
+    text-align: center;
 }
 
 .hero h1 {
-    font-size: clamp(55px, 10vw, 120px);
-    line-height: 1;
-
+    font-size: clamp(3rem, 8vw, 7rem);
+    letter-spacing: -3px;
     margin-bottom: 20px;
-
-    letter-spacing: -4px;
 }
 
 .hero h1 span {
-    background: linear-gradient(
-        90deg,
-        #ffffff,
-        #7180ff,
-        #b66cff
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    color: transparent;
+    color: white;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.5),
+        0 0 30px rgba(255,255,255,0.25);
 }
 
-.subtitle {
-    color: #b8bdd0;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.description {
-    max-width: 600px;
+.hero p {
+    color: #999;
+    font-size: 1.1rem;
+    max-width: 650px;
     margin: auto;
-
-    color: #777f96;
-    line-height: 1.8;
-
-    margin-bottom: 35px;
+    line-height: 1.7;
 }
 
-
-/* ================================
-   BUTTONS
-   ================================ */
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+/* BUTTON */
 
 .btn {
     display: inline-block;
-
-    padding: 14px 25px;
-
-    border-radius: 50px;
-
+    margin-top: 30px;
+    padding: 13px 28px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 30px;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
     transition: 0.3s;
 }
 
-.primary {
-    background: linear-gradient(
-        135deg,
-        #6675ff,
-        #9a63ff
-    );
-
-    color: white;
-
-    box-shadow:
-        0 0 30px rgba(100, 110, 255, 0.25);
+.btn:hover {
+    background: white;
+    color: black;
+    box-shadow: 0 0 25px rgba(255,255,255,0.5);
 }
 
-.primary:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 0 45px rgba(100, 110, 255, 0.45);
-}
-
-.secondary {
-    border: 1px solid rgba(255,255,255,0.15);
-    color: white;
-
-    background: rgba(255,255,255,0.04);
-}
-
-.secondary:hover {
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-4px);
-}
-
-
-/* ================================
-   PLANET
-   ================================ */
+/* SATURN */
 
 .planet {
     position: absolute;
-
-    width: 350px;
-    height: 350px;
-
-    right: -100px;
-    top: 18%;
-
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
-
+    right: 12%;
+    top: 25%;
     background:
         radial-gradient(
-            circle at 30% 30%,
-            #7785ff,
-            #333b91 35%,
-            #11152f 70%,
-            #05060e
+            circle at 35% 30%,
+            #ffffff 0%,
+            #dcdcdc 25%,
+            #999 55%,
+            #3b3b3b 80%,
+            #111 100%
         );
 
     box-shadow:
-        -20px 20px 100px rgba(82, 95, 255, 0.35);
+        0 0 25px rgba(255,255,255,0.5),
+        0 0 70px rgba(255,255,255,0.2),
+        0 0 120px rgba(255,255,255,0.08);
 
-    opacity: 0.8;
+    animation: floatPlanet 7s ease-in-out infinite;
+}
+
+/* SATURN RINGS */
+
+.planet::before {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 110px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    border-radius: 50%;
+    border: 16px solid rgba(235,235,235,0.75);
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.6),
+        0 0 35px rgba(255,255,255,0.25);
+    z-index: -1;
 }
 
 .planet::after {
     content: "";
-
     position: absolute;
-
-    width: 500px;
-    height: 100px;
-
-    left: -75px;
-    top: 125px;
-
-    border: 2px solid rgba(160, 170, 255, 0.25);
-
+    width: 400px;
+    height: 90px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-18deg);
     border-radius: 50%;
-
-    transform: rotate(-18deg);
+    border: 5px solid rgba(40,40,40,0.9);
+    z-index: 1;
 }
 
+/* PLANET FLOAT */
 
-/* ================================
-   ORBIT
-   ================================ */
-
-.orbit {
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    border: 1px solid rgba(110, 120, 255, 0.12);
-
-    border-radius: 50%;
-
-    right: -180px;
-    top: 10%;
-
-    animation: orbitRotate 20s linear infinite;
-}
-
-.orbit-dot {
-    position: absolute;
-
-    width: 12px;
-    height: 12px;
-
-    background: #8995ff;
-
-    border-radius: 50%;
-
-    top: 40px;
-    left: 80px;
-
-    box-shadow:
-        0 0 20px #7180ff;
-}
-
-@keyframes orbitRotate {
-    from {
-        transform: rotate(0deg);
+@keyframes floatPlanet {
+    0%, 100% {
+        transform: translateY(0);
     }
 
-    to {
-        transform: rotate(360deg);
+    50% {
+        transform: translateY(-18px);
     }
 }
 
+/* SECTIONS */
 
-/* ================================
-   SECTIONS
-   ================================ */
-
-.section {
-    padding: 130px 10%;
-    max-width: 1300px;
-    margin: auto;
+section {
+    padding: 110px 8%;
 }
 
-.section-label {
-    color: #6675ff;
-    font-size: 12px;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 15px;
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-.section h2,
-.contact-section h2 {
-    font-size: clamp(40px, 6vw, 70px);
+/* GLASS CARDS */
 
-    margin-bottom: 20px;
-
-    letter-spacing: -2px;
-}
-
-.section-text {
-    color: #7e8499;
-
-    max-width: 700px;
-
-    line-height: 1.8;
-
-    margin-bottom: 50px;
-}
-
-
-/* ================================
-   INFO CARDS
-   ================================ */
-
-.info-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.info-card {
+.info-card,
+.project-card {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
     padding: 30px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.06),
-            rgba(255,255,255,0.02)
-        );
-
-    border: 1px solid rgba(255,255,255,0.08);
-
     backdrop-filter: blur(15px);
-
-    transition: 0.4s;
-}
-
-.info-card:hover {
-    transform: translateY(-8px);
-
-    border-color: rgba(120,130,255,0.4);
-
     box-shadow:
-        0 20px 50px rgba(0,0,0,0.3);
+        0 10px 40px rgba(0,0,0,0.5);
+    transition: 0.35s;
 }
 
-.icon {
-    font-size: 35px;
-
-    margin-bottom: 20px;
-}
-
-.info-card h3 {
-    margin-bottom: 10px;
-}
-
-.info-card p {
-    color: #777f96;
-    line-height: 1.7;
-}
-
-
-/* ================================
-   PROJECTS
-   ================================ */
-
-.project-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
+.info-card:hover,
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255,255,255,0.3);
+    box-shadow:
+        0 15px 50px rgba(255,255,255,0.06);
 }
 
 .project-card {
-    position: relative;
-
-    padding: 35px;
-
-    min-height: 280px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.07),
-            rgba(255,255,255,0.015)
-        );
-
-    border: 1px solid rgba(255,255,255,0.08);
-
-    overflow: hidden;
-
-    transition: 0.4s;
-}
-
-.project-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 150px;
-    height: 150px;
-
-    right: -70px;
-    top: -70px;
-
-    border-radius: 50%;
-
-    background: #6675ff;
-
-    filter: blur(70px);
-
-    opacity: 0.15;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-
-    border-color: rgba(120,130,255,0.4);
-}
-
-.project-number {
-    color: #5965cc;
-
-    font-size: 14px;
-
-    margin-bottom: 50px;
-}
-
-.project-card h3 {
-    font-size: 24px;
-
-    margin-bottom: 15px;
-}
-
-.project-card p {
-    color: #777f96;
-
-    line-height: 1.7;
-
     margin-bottom: 25px;
 }
 
-.project-card span {
-    color: #8993ff;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
+.info-card p,
+.project-card p {
+    color: #aaa;
+    line-height: 1.7;
 }
 
-
-/* ================================
-   CONTACT
-   ================================ */
-
-.contact-section {
-    text-align: center;
-
-    padding: 150px 20px;
-
-    max-width: 900px;
-
-    margin: auto;
-}
-
-.contact-section p:not(.section-label) {
-    color: #777f96;
-
-    margin-bottom: 35px;
-}
-
-
-/* ================================
-   FOOTER
-   ================================ */
+/* FOOTER */
 
 footer {
+    padding: 50px 8%;
     text-align: center;
-
-    padding: 60px 20px;
-
-    border-top: 1px solid rgba(255,255,255,0.07);
-
-    background: rgba(0,0,0,0.2);
-}
-
-.footer-logo {
-    font-size: 25px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 10px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    background: #010101;
 }
 
 footer p {
-    color: #666d80;
-
-    margin-bottom: 20px;
+    color: #666;
+    margin-top: 10px;
 }
 
-footer small {
-    color: #454a5a;
-}
+/* MOBILE */
 
+@media (max-width: 768px) {
 
-/* ================================
-   MOBILE
-   ================================ */
-
-@media (max-width: 800px) {
-
-    .navbar {
-        width: 94%;
+    nav {
+        padding: 18px 5%;
     }
 
-    .nav-links {
-        gap: 12px;
-    }
-
-    .nav-links a {
-        font-size: 12px;
-    }
-
-    .planet {
-        width: 220px;
-        height: 220px;
-
-        right: -100px;
-        top: 15%;
-    }
-
-    .orbit {
-        width: 300px;
-        height: 300px;
-
-        right: -150px;
-    }
-
-    .info-grid,
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section {
-        padding: 100px 7%;
+    nav ul {
+        gap: 15px;
+        font-size: 0.85rem;
     }
 
     .hero {
-        padding: 120px 7%;
+        padding: 120px 5% 80px;
     }
 
-    .hero h1 {
-        letter-spacing: -2px;
+    .planet {
+        width: 150px;
+        height: 150px;
+        right: -30px;
+        top: 18%;
+        opacity: 0.7;
     }
 
-}
-
-@media (max-width: 500px) {
-
-    .navbar {
-        padding: 14px 18px;
+    .planet::before {
+        width: 250px;
+        height: 70px;
     }
 
-    .logo {
-        font-size: 18px;
+    .planet::after {
+        width: 230px;
+        height: 55px;
     }
 
-    .nav-links {
-        gap: 8px;
+    section {
+        padding: 80px 5%;
     }
-
-    .nav-links a {
-        font-size: 10px;
-    }
-
-    .hero h1 {
-        font-size: 55px;
-    }
-
-    .subtitle {
-        font-size: 16px;
-    }
-
-    .description {
-        font-size: 14px;
-    }
-
 }
